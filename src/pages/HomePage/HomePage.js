@@ -1,5 +1,5 @@
 import { Fragment } from "react";
-import "./HomePage.css";
+import styles from "./HomePage.module.scss";
 
 function HomePage() {
   return (

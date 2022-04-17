@@ -1,10 +1,10 @@
 import React from "react";
-import "./Header.css";
+import styles from "./Header.module.scss";
 
 function Header(props) {
   return (
-    <div className="container-fluid projectHeader">
-      <span className="projectName">
+    <div className={styles.projectHeader}>
+      <span className={styles.projectName}>
         Project website quản lý sản phẩm bằng REDUX+mockAPI
       </span>
     </div>
