@@ -1,5 +1,4 @@
 import { configureStore } from '@reduxjs/toolkit';
-import { combineReducers } from 'redux';
 import  EditingProductSlice from '../features/EditingProductSlice';
 import  productsSlice from '../features/productsSlice';
 

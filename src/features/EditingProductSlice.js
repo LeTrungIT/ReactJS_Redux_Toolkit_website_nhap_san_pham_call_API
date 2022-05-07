@@ -1,16 +1,32 @@
-import { createSlice } from "@reduxjs/toolkit";
+import { createAsyncThunk, createSlice } from "@reduxjs/toolkit";
+import callAPI from "../utils/apiCaller";
 
-const data = {};
+
+
 
 export const EditingProductSlice = createSlice({
   name: "EditingProduct",
-  initialState: data,
+  initialState: {status: 'idle', data: {}},
   reducers: {
-    EDIT_PRODUCT: (state, action) => {
-      return action.payload;
-    },
+   
   },
+  extraReducers: (builder) => {
+    builder.addCase(EDIT_PRODUCT_REQUEST.pending, (state, action) => {
+      state.status = 'loading';
+    }).addCase(EDIT_PRODUCT_REQUEST.fulfilled, (state, action) => {
+      state.data=action.payload;
+      state.status = 'idle';
+      
+    })
+  }
+
 });
+
+export const EDIT_PRODUCT_REQUEST=createAsyncThunk('EditingProduct/editProductRequest', async (id) => {
+  const res=await callAPI(`products/${id}`, "GET", null);
+  return res.data;
+
+})
 
 export const { reducer, actions } = EditingProductSlice;
 export const { EDIT_PRODUCT } = actions;

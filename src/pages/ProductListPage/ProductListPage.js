@@ -3,29 +3,27 @@ import ProductList from "./../../components/ProductList/ProductList";
 import ProductItem from "../../components/ProductItem/ProductItem";
 import { useSelector, useDispatch } from "react-redux";
 import { Link } from "react-router-dom";
-import { DELETE_PRODUCT, FETCH_DATA } from "../../features/productsSlice";
-import callAPI from "../../utils/apiCaller";
+
+import {
+  DELETE_PRODUCT_REQUEST,
+  FETCH_DATA_REQUEST,
+} from "../../features/productsSlice";
+import { productSelector } from "../../app/selector";
 
 function ProductListPage(props) {
   const dispatch = useDispatch();
-  const products = useSelector((state) => state.products);
+  const products = useSelector(productSelector);
 
   useEffect(() => {
-    callAPI("products", "GET", null).then((res) => {
-      const action = FETCH_DATA(res.data);
-      dispatch(action);
-    });
+    dispatch(FETCH_DATA_REQUEST());
   }, [dispatch]);
 
   const onDelete = (id) => {
-    callAPI(`products/${id}`, "DELETE", null).then((res) => {
-      const action = DELETE_PRODUCT({ id });
-      dispatch(action);
-    });
+    dispatch(DELETE_PRODUCT_REQUEST(id));
   };
 
-  var showProductItem = (products) => {
-    var result = null;
+  const showProductItem = (products) => {
+    let result = null;
     if (products && products.length > 0) {
       result = products.map((product, index) => {
         return (
