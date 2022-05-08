@@ -1,4 +1,3 @@
-
 function ProductList(props) {
     return (
         <div className="panel panel-primary">
@@ -6,7 +5,6 @@ function ProductList(props) {
                 <h3 className="panel-title ct">Danh sách sản phẩm</h3>
             </div>
             <div className="panel-body">
-
                 <table className="table table-striped table-hover">
                     <thead>
                         <tr>
@@ -16,17 +14,12 @@ function ProductList(props) {
                             <th>Giá</th>
                             <th>Trạng thái</th>
                             <th>Hành động</th>
-
                         </tr>
                     </thead>
-                    <tbody>
-                        {props.children}
-                    </tbody>
+                    <tbody>{props.children}</tbody>
                 </table>
-
             </div>
         </div>
-
     );
 }
 export default ProductList;

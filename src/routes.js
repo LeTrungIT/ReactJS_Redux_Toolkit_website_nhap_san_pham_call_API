@@ -1,32 +1,27 @@
-import NotFoundPage from "./pages/NotFoundPage/NotFoundPage";
+import NotFoundPage from './pages/NotFoundPage/NotFoundPage';
 import ProductListPage from './pages/ProductListPage/ProductListPage';
-import ProductActionPage from "./pages/ProductActionPage/ProductActionPage";
+import ProductActionPage from './pages/ProductActionPage/ProductActionPage';
 
 const routes = [
     {
         path: '/',
-        component: <ProductListPage/>
-
+        component: <ProductListPage />,
     },
     {
         path: '/product',
-        component: <ProductListPage/>
-
+        component: <ProductListPage />,
     },
     {
         path: '/product/add',
-        component: <ProductActionPage />
-
+        component: <ProductActionPage />,
     },
     {
         path: '/product/:id/edit',
-        component: <ProductActionPage/>
-
+        component: <ProductActionPage />,
     },
     {
         path: '*',
-        component: <NotFoundPage/>
-
-    }
+        component: <NotFoundPage />,
+    },
 ];
 export default routes;
