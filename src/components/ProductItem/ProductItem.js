@@ -1,4 +1,5 @@
 import { Link } from 'react-router-dom';
+import styles from './ProductItem.module.scss';
 
 function ProductItem(props) {
     const { product, index } = props;
@@ -15,7 +16,7 @@ function ProductItem(props) {
         <tr>
             <td>{index + 1}</td>
             <td>{product.id}</td>
-            <td>{product.name}</td>
+            <td className={styles.productName}>{product.name}</td>
             <td>{product.price} VNĐ</td>
             <td>
                 <span className={`label label-${statusClass}`}>{statusName}</span>
