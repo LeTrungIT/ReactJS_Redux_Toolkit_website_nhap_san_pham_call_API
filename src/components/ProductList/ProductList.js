@@ -24,7 +24,7 @@ function ProductList({ children }) {
         </div>
     );
 }
-ProductList.propType = {
+ProductList.propTypes = {
     children: PropTypes.node.isRequired,
 };
 export default ProductList;

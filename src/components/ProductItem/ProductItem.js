@@ -35,7 +35,7 @@ function ProductItem({ product, index, onDelete }) {
     );
 }
 
-ProductItem.propType = {
+ProductItem.propTypes = {
     product: PropTypes.object.isRequired,
     index: PropTypes.number.isRequired,
     onDelete: PropTypes.func,

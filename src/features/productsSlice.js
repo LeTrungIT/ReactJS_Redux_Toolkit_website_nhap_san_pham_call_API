@@ -39,13 +39,11 @@ export const ADD_PRODUCT_REQUEST = createAsyncThunk('products/addProductRequest'
 });
 export const DELETE_PRODUCT_REQUEST = createAsyncThunk('products/deleteProductRequest', async (id) => {
     const res = await callAPI(`products/${id}`, 'DELETE', null);
-    console.log(res.data);
     return res.data;
 });
 
 export const UPDATE_PRODUCT_REQUEST = createAsyncThunk('products/updateProductRequest', async (newProduct) => {
     const res = await callAPI(`products/${newProduct.id}`, 'PUT', newProduct);
-    console.log(res.data);
     return res.data;
 });
 
