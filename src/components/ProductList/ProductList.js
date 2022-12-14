@@ -1,4 +1,6 @@
-function ProductList(props) {
+import PropTypes from 'prop-types';
+
+function ProductList({ children }) {
     return (
         <div className="panel panel-primary">
             <div className="panel-heading">
@@ -16,10 +18,13 @@ function ProductList(props) {
                             <th>Hành động</th>
                         </tr>
                     </thead>
-                    <tbody>{props.children}</tbody>
+                    <tbody>{children}</tbody>
                 </table>
             </div>
         </div>
     );
 }
+ProductList.propType = {
+    children: PropTypes.node.isRequired,
+};
 export default ProductList;

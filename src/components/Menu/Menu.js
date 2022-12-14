@@ -1,19 +1,21 @@
 import { Link } from 'react-router-dom';
 
+import configRoutes from '../../config/routes';
+
 function Menu() {
     const menus = [
         {
-            to: '/',
+            to: configRoutes.home,
             name: 'Trang chủ',
             active: true,
         },
         {
-            to: '/product',
+            to: configRoutes.produst,
             name: 'Quản lý sản phẩm',
             active: true,
         },
         {
-            to: '/about',
+            to: configRoutes.contact,
             name: 'Liên hệ',
             active: true,
         },

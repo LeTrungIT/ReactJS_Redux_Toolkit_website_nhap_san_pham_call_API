@@ -1,15 +1,16 @@
 import { Link } from 'react-router-dom';
+import PropTypes from 'prop-types';
+
 import styles from './ProductItem.module.scss';
 
-function ProductItem(props) {
-    const { product, index } = props;
+function ProductItem({ product, index, onDelete }) {
     const statusName = product.status ? 'Còn hàng' : 'Hết hàng';
     const statusClass = product.status ? 'warning' : 'default';
 
     const handleDelete = (id) => {
         if (window.confirm('Bạn chắc chắn muốn xóa hay không?')) {
             //eslint-disable-line
-            props.onDelete(id);
+            onDelete(id);
         }
     };
     return (
@@ -33,4 +34,10 @@ function ProductItem(props) {
         </tr>
     );
 }
+
+ProductItem.propType = {
+    product: PropTypes.object.isRequired,
+    index: PropTypes.number.isRequired,
+    onDelete: PropTypes.func,
+};
 export default ProductItem;

@@ -1,13 +1,13 @@
 import React, { Fragment, useEffect } from 'react';
-import ProductList from './../../components/ProductList/ProductList';
-import ProductItem from '../../components/ProductItem/ProductItem';
 import { useSelector, useDispatch } from 'react-redux';
 import { Link } from 'react-router-dom';
 
 import { DELETE_PRODUCT_REQUEST, FETCH_DATA_REQUEST } from '../../features/productsSlice';
 import { productSelector } from '../../app/selector';
+import ProductList from './../../components/ProductList/ProductList';
+import ProductItem from '../../components/ProductItem/ProductItem';
 
-function ProductListPage(props) {
+function ProductListPage() {
     const dispatch = useDispatch();
     const products = useSelector(productSelector);
 

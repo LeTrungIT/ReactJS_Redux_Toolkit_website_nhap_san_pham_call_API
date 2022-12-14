@@ -2,7 +2,7 @@ import './App.css';
 import React, { Fragment } from 'react';
 import Menu from './components/Menu/Menu';
 import routes from './routes';
-import { Routes, Route } from 'react-router-dom';
+import { Routes, Route, BrowserRouter as Router } from 'react-router-dom';
 import Header from './components/Header/Header';
 
 function App() {
@@ -17,9 +17,11 @@ function App() {
     };
     return (
         <Fragment>
-            <Header />
-            <Menu />
-            <div className="container">{showMenuContent(routes)};</div>
+            <Router>
+                <Header />
+                <Menu />
+                <div className="container">{showMenuContent(routes)};</div>
+            </Router>
         </Fragment>
     );
 }

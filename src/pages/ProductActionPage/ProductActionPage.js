@@ -5,7 +5,7 @@ import { EDIT_PRODUCT_REQUEST } from '../../features/EditingProductSlice';
 import { ADD_PRODUCT_REQUEST, UPDATE_PRODUCT_REQUEST } from '../../features/productsSlice';
 import { editingProductSelector } from '../../app/selector';
 
-function ProductActionPage(props) {
+function ProductActionPage() {
     const navigate = useNavigate();
     const dispatch = useDispatch();
     const EditingProduct = useSelector(editingProductSelector);
